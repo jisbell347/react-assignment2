@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import './App.css';
 import Validation from './Validation';
 class App extends Component {
+   state = {
+      userInput: ''
+   };
+
+   inputChangeHandler = (event) => {
+      this.setState({userInput: event.target.value});
+   };
+
   render() {
     return (
       <div className="App">
@@ -15,7 +23,7 @@ class App extends Component {
         </ol>
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
          <hr />
-         <input type="text" onChange={props.changed}/>
+         <input type="text" onChange={this.inputChangeHandler} value={this.state.userInput}/>
          <Validation />
       </div>
     );
