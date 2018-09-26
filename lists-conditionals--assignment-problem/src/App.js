@@ -24,6 +24,7 @@ class App extends Component {
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
          <hr />
          <input type="text" onChange={this.inputChangeHandler} value={this.state.userInput}/>
+         <p>{this.state.userInput}</p>
          <Validation />
       </div>
     );
